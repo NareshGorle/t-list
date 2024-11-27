@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+        <title>Documnet Object Model</title>
+       
+        <style>
+            button:hover { background-color: darkblue;color: azure;
+                
+            }
+            button{ padding: 10px;
+            }
+            #input{
+                background: transparent;
+                padding: 10px 10px;
+                
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h1>To-do list</h1>
+        <div><input type="text" id="input" placeholder="Typingg..">
+            <button onclick="change()">click</button>
+        </div>
+        <div>
+             <h3 id="history">
+               
+             </h3>
+        </div>
+
+          
+        
+        <script  > 
+        function change(){
+         const input = document.getElementById('input');
+         const hsty = document.getElementById('history')
+
+        //  console.log(input.value)
+         hsty.innerHTML = input.value
+        }
+
+            
+             
+            
+        </script>
+    </body>
+</html>
