@@ -52,9 +52,61 @@
                 let li = document.createElement("li");
                 li.innerHTML = input.value;
                 hsty.appendChild(li);
+
+                  li.addEventListener('click',(ele)=>{
+                         const classes = Array.from(ele.target.classList);
+                    
+                     if(classes.includes("completed")){
+                            ele.target.classList.remove("completed")
+                        }else{
+                            ele.target.classList.add("completed")
+                           };
+                //    console.log("classes")
+                });
+                   
+                let button_2 = document.createElement("button");
+                button_2.classList.add("btn2");
+                
+                button_2.innerHTML="DEL";
+                 li.appendChild(button_2);
+                 button_2.addEventListener('click',(ele)=>{
+                  ele.target.parentElement.remove()});
+
+              
+                  let button_3 = document.createElement("button");
+                   button_3.classList.add("btn3")
+                   button_3.innerHTML = "EDIT";
+                     li.appendChild(button_3);
+                     input.setAttribute("readonly","readonly");
+
+                     
+                    button_3.addEventListener('click',()=>{
+                        if(button_3.innerText=="EDIT"){
+                            input.removeAttribute("readonly");
+                            input.focus();
+                            button_3.innerText = "save";
+                        }
+                         else{
+                             input.setAttribute("readonly","readonly");
+                             button_3.innerText = "EDIT";
+                         }
+                    });
+               
               };
               input.value="";           
-        }
+        };
+                     
+            
+                // let button = document.createElement("button");
+                // button3.innerHTML="Edit";
+                // li.appendChild(button);
+
+        //    li.addEventListener("click",(ele)=>{
+        //     if(ele.target.tagName==="button2"){
+        //         ele.target.parentElement.remove();
+        //     }
+        // })
+        
     
 
             
